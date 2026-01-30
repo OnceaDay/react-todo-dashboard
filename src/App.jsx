@@ -9,12 +9,12 @@ const App = () => {
     setTasks((prev) => [task, ...prev]);
   };
 
-  // ✅ DELETE by id
+  // delete by id
   const deleteTask = (id) => {
     setTasks((prev) => prev.filter((t) => t.id !== id));
   };
 
-  // ✅ UPDATE by id (replace the task)
+  // update by id 
   const updateTask = (updatedTask) => {
     setTasks((prev) =>
       prev.map((t) => (t.id === updatedTask.id ? updatedTask : t))

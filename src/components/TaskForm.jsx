@@ -26,7 +26,7 @@ export default function TaskForm({ onAddTask }) {
 
   const isInProgress = form.status === "IN_PROGRESS";
 
-  // Enforce your percent rules
+  // enforce your percent rules
   const enforcedPercent = useMemo(() => {
     if (form.status === "COMPLETED") return 100;
     if (form.status === "NOT_STARTED") return 0;
@@ -72,7 +72,7 @@ export default function TaskForm({ onAddTask }) {
     // If this function exists, call it. If it doesn’t, do nothing and don’t crash.
     onAddTask?.(newTask);
 
-    // Smooth scroll down to dashboard after adding
+   
     document.getElementById("dashboard")?.scrollIntoView({ behavior: "smooth" });
 
     setForm(DEFAULT_FORM);

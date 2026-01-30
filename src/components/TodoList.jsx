@@ -137,10 +137,10 @@ export default function TodoList({ tasks = [], onDeleteTask, onUpdateTask }) {
               {tasks.map((t) => {
                 const isEditing = editingId === t.id;
 
-                // key fix: during edit, render the row from editForm (single source of truth)
+              
                 const rowData = isEditing ? editForm : t;
 
-                // If something weird happens and editForm is null, fail safely
+                
                 if (!rowData) return null;
 
                 const percent = Number(rowData.percentComplete ?? 0);
