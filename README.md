@@ -1,8 +1,77 @@
 # React ToDo Status Dashboard
 
-A React-based **Task “ToDo” Status Report** dashboard built with **React + Vite** to practice controlled forms, state management, and dynamic UI updates.
+![Excel Design Prototype – Source of Truth](public/img/Task_todo_Pic3.jpg)
 
-This project began as an **Excel-based dashboard prototype** used to define the data model, rules, and visual layout, and was then implemented as a fully interactive React application.
+> **Design artifact:** Original Excel dashboard used to define task structure, priority rules, status flow, and completion logic prior to implementation.
+
+---
+
+## Overview
+
+This project demonstrates a **design-first engineering workflow**: the application was planned and modeled in Excel before being implemented as a fully interactive React dashboard.
+
+The goal was to translate a clear specification—data model, rules, and UI behavior—into a clean, state-driven front-end application.
+
+---
+
+## Design-First Workflow (Excel → React)
+
+Before any React code was written, the task dashboard was conceptualized in **Excel** to:
+
+- Define the task data model (fields, defaults, constraints)
+- Establish status transitions and priority semantics
+- Formalize completion and progress rules
+- Visualize dashboard summary metrics
+
+### Design Rules Carried Into the React Implementation
+
+- New tasks default to **Not Started**
+- New tasks default to **Low Priority**
+- Completion percentage is editable **only** when status is **In Progress**
+- **Completed** tasks lock completion at **100%**
+- **Not Started** and **Scheduled** tasks lock completion at **0%**
+
+This approach ensured the React build followed an intentional specification rather than ad-hoc UI decisions.
+
+---
+
+## Application Features
+
+- Controlled form for task creation
+- Task fields:
+  - Name
+  - Description
+  - Priority (Low / Normal / High)
+  - Status (Not Started / Scheduled / In Progress / Completed)
+  - Completion percentage
+- Edit and delete task actions
+- Dashboard metrics derived directly from application state
+- Automatic UI updates based on task changes
+
+---
+
+## React Dashboard Walkthrough
+
+### Initial State
+
+![Initial React Dashboard State](public/img/Task_todo_Pic1.jpg)
+
+- No tasks present
+- All dashboard counters initialized to zero
+- Empty task list
+
+---
+
+### Active State
+
+![React Dashboard With Tasks](public/img/Task_todo_Pic2.jpg)
+
+- Tasks displayed with priority and status indicators
+- Completion percentages reflect task progress
+- Dashboard summary metrics update in real time
+- Actions available per task (Edit / Delete)
+
+All displayed values are derived from React state and remain synchronized as tasks change.
 
 ---
 
@@ -12,71 +81,6 @@ This project began as an **Excel-based dashboard prototype** used to define the 
 - Vite
 - JavaScript (ES6+)
 - CSS
-
----
-
-## Core Features
-
-- Add tasks using a controlled form
-- Task fields include:
-  - Task name
-  - Description
-  - Priority (Low / Normal / High)
-  - Status (Not Started / Scheduled / In Progress / Completed)
-  - Completion percentage
-- Default task behavior:
-  - New tasks default to **Not Started**
-  - New tasks default to **Low** priority
-- Edit and delete tasks
-- Dashboard metrics update automatically from application state
-
----
-
-## Excel Prototype → React Build
-
-Before writing any React code, the dashboard was **designed in Excel** as a planning template to define:
-
-- The task table structure (columns and fields)
-- Status categories and task flow
-- Priority indicators
-- Completion and progress rules
-- Summary metrics for the dashboard (Completed / In Progress / Not Started)
-
-### 1) Excel Design Prototype (Source of Truth)
-
-![Excel Design Prototype](public/img/Task_todo_Pic1.jpg)
-
-Rules carried into the React implementation:
-
-- Completion percentage is editable **only** when **Status = In Progress**
-- **Completed** locks completion to **100%**
-- **Not Started** and **Scheduled** lock completion to **0%**
-- New tasks start as **Not Started** with **Low** priority by default
-
----
-
-## React Dashboard Screenshots
-
-### 2) Initial React Dashboard State
-
-![Initial React Dashboard State](public/img/Task_todo_Pic2.jpg)
-
-At initial load:
-- No tasks exist
-- Dashboard counters are zeroed
-- The task list is empty
-
-### 3) Dashboard After Tasks Are Added
-
-![React Dashboard With Tasks](public/img/Task_todo_Pic3.jpg)
-
-After tasks are added and updated, the dashboard dynamically displays:
-- Counts by status
-- Priority and status indicators
-- Completion percentage per task
-- Available task actions (Edit / Delete)
-
-All dashboard values are derived from React state and remain synchronized as tasks change.
 
 ---
 
@@ -94,58 +98,43 @@ src/
 ├── main.jsx
 ```
 
-Screenshot assets used in this README:
+Assets used in this documentation:
 
 ```
 public/
 └── img/
-    ├── Task_todo_Pic1.jpg   # Excel prototype
-    ├── Task_todo_Pic2.jpg   # Initial React dashboard
-    └── Task_todo_Pic3.jpg   # React dashboard with tasks
+    ├── Task_todo_Pic3.jpg   # Excel design prototype
+    ├── Task_todo_Pic1.jpg   # Initial React dashboard
+    └── Task_todo_Pic2.jpg   # React dashboard with tasks
 ```
 
 ---
 
-## Getting Started
-
-### Clone the Repository
+## Running the Project Locally
 
 ```bash
 git clone https://github.com/OnceaDay/react-todo-dashboard.git
 cd react-todo-dashboard
-```
-
-### Install Dependencies
-
-```bash
 npm install
-```
-
-### Run the Development Server
-
-```bash
 npm run dev
 ```
 
-Open:
-
-```
-http://localhost:5173
-```
+Open `http://localhost:5173` in your browser.
 
 ---
 
-## Future Improvements
+## What This Project Demonstrates
 
-- UI and responsive layout refinements
-- Filtering and sorting by priority or status
-- Persist tasks using localStorage or a backend API
-- Visual charts for task completion
+- Translating a static design artifact into a dynamic application
+- Clear separation between planning, logic, and presentation
+- State-driven UI updates in React
+- Practical task and dashboard modeling
 
 ---
 
-## Summary
+## Future Enhancements
 
-This project demonstrates a practical workflow: **prototype in Excel → implement in React**.
-
-The Excel version established the rules and layout first; the React version delivers the same logic as a state-driven, interactive dashboard.
+- Task filtering and sorting
+- Persistent storage (localStorage or backend API)
+- Data visualizations for task completion
+- Responsive and accessibility improvements
