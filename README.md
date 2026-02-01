@@ -1,11 +1,5 @@
 # React ToDo Status Dashboard
 
-![Excel Design Prototype – Source of Truth](public/img/Task_todo_Pic3.jpg)
-
-> **Design artifact:** Original Excel dashboard used to define task structure, priority rules, status flow, and completion logic prior to implementation.
-
----
-
 ## Overview
 
 This project demonstrates a **design-first engineering workflow**: the application was planned and modeled in Excel before being implemented as a fully interactive React dashboard.
@@ -22,6 +16,10 @@ Before any React code was written, the task dashboard was conceptualized in **Ex
 - Establish status transitions and priority semantics
 - Formalize completion and progress rules
 - Visualize dashboard summary metrics
+
+![Excel Design Prototype – Source of Truth](public/img/Task_todo_Pic3.jpg)
+
+> **Design artifact:** Original Excel dashboard used to define task structure, priority rules, status flow, and completion logic prior to implementation.
 
 ### Design Rules Carried Into the React Implementation
 
